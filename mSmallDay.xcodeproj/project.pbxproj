@@ -13,8 +13,12 @@
 		7D4910151BC8BCC60053C0AA /* mSmallDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4910141BC8BCC60053C0AA /* mSmallDayTests.swift */; };
 		7D4910201BC8BCC60053C0AA /* mSmallDayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49101F1BC8BCC60053C0AA /* mSmallDayUITests.swift */; };
 		7D4910361BC8BF970053C0AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4910351BC8BF970053C0AA /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		7DB3B5611BC8DE1D008CAD7F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B5601BC8DE1D008CAD7F /* Theme.swift */; settings = {ASSET_TAGS = (); }; };
+		7DB3B5611BC8DE1D008CAD7F /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B5601BC8DE1D008CAD7F /* Macros.swift */; settings = {ASSET_TAGS = (); }; };
 		7DB3B5631BC8E038008CAD7F /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B5621BC8E038008CAD7F /* UIColor+extension.swift */; settings = {ASSET_TAGS = (); }; };
+		7DB3B5651BC900BA008CAD7F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B5641BC900BA008CAD7F /* Theme.swift */; settings = {ASSET_TAGS = (); }; };
+		7DB3B5671BC9045C008CAD7F /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B5661BC9045C008CAD7F /* UserInfoManager.swift */; settings = {ASSET_TAGS = (); }; };
+		7DB3B56F1BC90978008CAD7F /* LeadpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B56E1BC90978008CAD7F /* LeadpageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7DB3B5711BC909A1008CAD7F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B5701BC909A1008CAD7F /* MainTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
 		EAC50E5E87C437E3891B4215 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C05A2FF896AA102BFA3F469 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -50,8 +54,13 @@
 		7D49101F1BC8BCC60053C0AA /* mSmallDayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mSmallDayUITests.swift; sourceTree = "<group>"; };
 		7D4910211BC8BCC60053C0AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D4910351BC8BF970053C0AA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7DB3B5601BC8DE1D008CAD7F /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		7DB3B5601BC8DE1D008CAD7F /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		7DB3B5621BC8E038008CAD7F /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		7DB3B5641BC900BA008CAD7F /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		7DB3B5661BC9045C008CAD7F /* UserInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+		7DB3B56C1BC905E0008CAD7F /* mSmallDay-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mSmallDay-Bridging-Header.h"; sourceTree = "<group>"; };
+		7DB3B56E1BC90978008CAD7F /* LeadpageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadpageViewController.swift; sourceTree = "<group>"; };
+		7DB3B5701BC909A1008CAD7F /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		948807915F235DEAA8848270 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4910351BC8BF970053C0AA /* AppDelegate.swift */,
+				7DB3B56C1BC905E0008CAD7F /* mSmallDay-Bridging-Header.h */,
 				7D4910031BC8BCC60053C0AA /* Main.storyboard */,
 				7D4910081BC8BCC60053C0AA /* LaunchScreen.storyboard */,
 			);
@@ -165,6 +175,7 @@
 		7D4910301BC8BECA0053C0AA /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				7DB3B5661BC9045C008CAD7F /* UserInfoManager.swift */,
 			);
 			name = "Tools(工具)";
 			path = Tools;
@@ -173,6 +184,7 @@
 		7D4910311BC8BEFA0053C0AA /* UI(界面) */ = {
 			isa = PBXGroup;
 			children = (
+				7DB3B56D1BC90954008CAD7F /* Main(公共) */,
 			);
 			name = "UI(界面)";
 			path = UI;
@@ -208,10 +220,21 @@
 		7D4910381BC8BFF00053C0AA /* Macros(常量) */ = {
 			isa = PBXGroup;
 			children = (
-				7DB3B5601BC8DE1D008CAD7F /* Theme.swift */,
+				7DB3B5601BC8DE1D008CAD7F /* Macros.swift */,
+				7DB3B5641BC900BA008CAD7F /* Theme.swift */,
 			);
 			name = "Macros(常量)";
 			path = Macros;
+			sourceTree = "<group>";
+		};
+		7DB3B56D1BC90954008CAD7F /* Main(公共) */ = {
+			isa = PBXGroup;
+			children = (
+				7DB3B56E1BC90978008CAD7F /* LeadpageViewController.swift */,
+				7DB3B5701BC909A1008CAD7F /* MainTabBarController.swift */,
+			);
+			name = "Main(公共)";
+			path = Main;
 			sourceTree = "<group>";
 		};
 		A7B95F9BDF7F627CA1BA2D2D /* Frameworks */ = {
@@ -296,6 +319,7 @@
 		7D490FF41BC8BCC60053C0AA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = pikeYoung;
 				TargetAttributes = {
@@ -414,8 +438,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DB3B5631BC8E038008CAD7F /* UIColor+extension.swift in Sources */,
+				7DB3B5651BC900BA008CAD7F /* Theme.swift in Sources */,
+				7DB3B5671BC9045C008CAD7F /* UserInfoManager.swift in Sources */,
+				7DB3B5711BC909A1008CAD7F /* MainTabBarController.swift in Sources */,
+				7DB3B56F1BC90978008CAD7F /* LeadpageViewController.swift in Sources */,
 				7D4910361BC8BF970053C0AA /* AppDelegate.swift in Sources */,
-				7DB3B5611BC8DE1D008CAD7F /* Theme.swift in Sources */,
+				7DB3B5611BC8DE1D008CAD7F /* Macros.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,7 +588,9 @@
 			baseConfigurationReference = 0545ABA053795985DC037FAD /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = mSmallDay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -570,6 +600,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.pike.mSmallDay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mSmallDay/Classes/Others/mSmallDay-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -578,7 +610,9 @@
 			baseConfigurationReference = 948807915F235DEAA8848270 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = mSmallDay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -588,6 +622,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.pike.mSmallDay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mSmallDay/Classes/Others/mSmallDay-Bridging-Header.h";
 			};
 			name = Release;
 		};
