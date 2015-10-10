@@ -39,7 +39,7 @@ class LeadpageViewController: UIViewController {
     }
 
     func showMainTabbar() {
-        appShare.keyWindow?.rootViewController = MainTabBarController()
+        appShare.keyWindow?.rootViewController = MainNavigationController(rootViewController: MainTabBarController())
     }
     
 }

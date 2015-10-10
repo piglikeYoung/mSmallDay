@@ -23,6 +23,7 @@
 		7DB3B5781BC90E93008CAD7F /* fourpage-414w-736h@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DB3B5741BC90E93008CAD7F /* fourpage-414w-736h@3x.jpg */; settings = {ASSET_TAGS = (); }; };
 		7DB3B5791BC90E93008CAD7F /* fourpage-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DB3B5751BC90E93008CAD7F /* fourpage-568h@2x.jpg */; settings = {ASSET_TAGS = (); }; };
 		7DB3B57A1BC90E93008CAD7F /* fourpage@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DB3B5761BC90E93008CAD7F /* fourpage@2x.jpg */; settings = {ASSET_TAGS = (); }; };
+		7DB3B57C1BC91607008CAD7F /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B57B1BC91607008CAD7F /* MainNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 		EAC50E5E87C437E3891B4215 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C05A2FF896AA102BFA3F469 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		7DB3B5741BC90E93008CAD7F /* fourpage-414w-736h@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fourpage-414w-736h@3x.jpg"; sourceTree = "<group>"; };
 		7DB3B5751BC90E93008CAD7F /* fourpage-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fourpage-568h@2x.jpg"; sourceTree = "<group>"; };
 		7DB3B5761BC90E93008CAD7F /* fourpage@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fourpage@2x.jpg"; sourceTree = "<group>"; };
+		7DB3B57B1BC91607008CAD7F /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		948807915F235DEAA8848270 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,6 +241,7 @@
 		7DB3B56D1BC90954008CAD7F /* Main(公共) */ = {
 			isa = PBXGroup;
 			children = (
+				7DB3B57B1BC91607008CAD7F /* MainNavigationController.swift */,
 				7DB3B56E1BC90978008CAD7F /* LeadpageViewController.swift */,
 				7DB3B5701BC909A1008CAD7F /* MainTabBarController.swift */,
 			);
@@ -463,6 +466,7 @@
 			files = (
 				7DB3B5631BC8E038008CAD7F /* UIColor+extension.swift in Sources */,
 				7DB3B5651BC900BA008CAD7F /* Theme.swift in Sources */,
+				7DB3B57C1BC91607008CAD7F /* MainNavigationController.swift in Sources */,
 				7DB3B5671BC9045C008CAD7F /* UserInfoManager.swift in Sources */,
 				7DB3B5711BC909A1008CAD7F /* MainTabBarController.swift in Sources */,
 				7DB3B56F1BC90978008CAD7F /* LeadpageViewController.swift in Sources */,
