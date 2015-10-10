@@ -11,8 +11,8 @@ import Kingfisher
 import XCGLogger
 
 let kNavigationH: CGFloat = 64
-let kAppWidth: CGFloat = UIScreen.mainScreen().bounds.size.width
-let kAppHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
+let kScreenWidth: CGFloat = UIScreen.mainScreen().bounds.size.width
+let kScreenHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
 let kMainBounds: CGRect = UIScreen.mainScreen().bounds
 
 
@@ -59,4 +59,14 @@ var documentsDirectory: NSURL {
 /// 缓存文件夹路径
 var cacheDirectory: NSURL {
     return NSFileManager.defaultManager().URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask).last!
+}
+
+/// 没有高亮状态的按钮
+class NoHighlightButton: UIButton {
+    /// 重写setFrame方法
+    override var highlighted: Bool {
+        didSet{
+            super.highlighted = false
+        }
+    }
 }

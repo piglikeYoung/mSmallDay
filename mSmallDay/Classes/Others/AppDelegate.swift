@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setUserMapInfo()
         
-        
         return true
     }
     
@@ -96,6 +95,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return LeadpageViewController()
             }
         } else {
+            NSUserDefaults.standardUserDefaults().setObject(currentVersion, forKey: versionStr)
+            NSUserDefaults.standardUserDefaults().synchronize()
             return LeadpageViewController()
         }
     }

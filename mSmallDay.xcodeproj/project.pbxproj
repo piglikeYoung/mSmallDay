@@ -19,6 +19,10 @@
 		7DB3B5671BC9045C008CAD7F /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B5661BC9045C008CAD7F /* UserInfoManager.swift */; settings = {ASSET_TAGS = (); }; };
 		7DB3B56F1BC90978008CAD7F /* LeadpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B56E1BC90978008CAD7F /* LeadpageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7DB3B5711BC909A1008CAD7F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B5701BC909A1008CAD7F /* MainTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
+		7DB3B5771BC90E93008CAD7F /* fourpage-375w-667h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DB3B5731BC90E93008CAD7F /* fourpage-375w-667h@2x.jpg */; settings = {ASSET_TAGS = (); }; };
+		7DB3B5781BC90E93008CAD7F /* fourpage-414w-736h@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DB3B5741BC90E93008CAD7F /* fourpage-414w-736h@3x.jpg */; settings = {ASSET_TAGS = (); }; };
+		7DB3B5791BC90E93008CAD7F /* fourpage-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DB3B5751BC90E93008CAD7F /* fourpage-568h@2x.jpg */; settings = {ASSET_TAGS = (); }; };
+		7DB3B57A1BC90E93008CAD7F /* fourpage@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DB3B5761BC90E93008CAD7F /* fourpage@2x.jpg */; settings = {ASSET_TAGS = (); }; };
 		EAC50E5E87C437E3891B4215 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C05A2FF896AA102BFA3F469 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -61,6 +65,10 @@
 		7DB3B56C1BC905E0008CAD7F /* mSmallDay-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mSmallDay-Bridging-Header.h"; sourceTree = "<group>"; };
 		7DB3B56E1BC90978008CAD7F /* LeadpageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadpageViewController.swift; sourceTree = "<group>"; };
 		7DB3B5701BC909A1008CAD7F /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		7DB3B5731BC90E93008CAD7F /* fourpage-375w-667h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fourpage-375w-667h@2x.jpg"; sourceTree = "<group>"; };
+		7DB3B5741BC90E93008CAD7F /* fourpage-414w-736h@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fourpage-414w-736h@3x.jpg"; sourceTree = "<group>"; };
+		7DB3B5751BC90E93008CAD7F /* fourpage-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fourpage-568h@2x.jpg"; sourceTree = "<group>"; };
+		7DB3B5761BC90E93008CAD7F /* fourpage@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fourpage@2x.jpg"; sourceTree = "<group>"; };
 		948807915F235DEAA8848270 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +164,7 @@
 		7D49102E1BC8BE9D0053C0AA /* Resource(资源) */ = {
 			isa = PBXGroup;
 			children = (
+				7DB3B5721BC90E2F008CAD7F /* Newfeature */,
 			);
 			name = "Resource(资源)";
 			path = Resource;
@@ -235,6 +244,17 @@
 			);
 			name = "Main(公共)";
 			path = Main;
+			sourceTree = "<group>";
+		};
+		7DB3B5721BC90E2F008CAD7F /* Newfeature */ = {
+			isa = PBXGroup;
+			children = (
+				7DB3B5731BC90E93008CAD7F /* fourpage-375w-667h@2x.jpg */,
+				7DB3B5741BC90E93008CAD7F /* fourpage-414w-736h@3x.jpg */,
+				7DB3B5751BC90E93008CAD7F /* fourpage-568h@2x.jpg */,
+				7DB3B5761BC90E93008CAD7F /* fourpage@2x.jpg */,
+			);
+			path = Newfeature;
 			sourceTree = "<group>";
 		};
 		A7B95F9BDF7F627CA1BA2D2D /* Frameworks */ = {
@@ -364,6 +384,10 @@
 			files = (
 				7D49100A1BC8BCC60053C0AA /* LaunchScreen.storyboard in Resources */,
 				7D4910071BC8BCC60053C0AA /* Assets.xcassets in Resources */,
+				7DB3B5771BC90E93008CAD7F /* fourpage-375w-667h@2x.jpg in Resources */,
+				7DB3B57A1BC90E93008CAD7F /* fourpage@2x.jpg in Resources */,
+				7DB3B5781BC90E93008CAD7F /* fourpage-414w-736h@3x.jpg in Resources */,
+				7DB3B5791BC90E93008CAD7F /* fourpage-568h@2x.jpg in Resources */,
 				7D4910051BC8BCC60053C0AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
