@@ -24,6 +24,10 @@
 		7DB3B5791BC90E93008CAD7F /* fourpage-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DB3B5751BC90E93008CAD7F /* fourpage-568h@2x.jpg */; settings = {ASSET_TAGS = (); }; };
 		7DB3B57A1BC90E93008CAD7F /* fourpage@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DB3B5761BC90E93008CAD7F /* fourpage@2x.jpg */; settings = {ASSET_TAGS = (); }; };
 		7DB3B57C1BC91607008CAD7F /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B57B1BC91607008CAD7F /* MainNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
+		7DEE6D691BCB50E200B8FA77 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE6D681BCB50E200B8FA77 /* ExploreViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7DEE6D6B1BCB50F800B8FA77 /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE6D6A1BCB50F800B8FA77 /* ExperienceViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7DEE6D6D1BCB510C00B8FA77 /* ClassifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE6D6C1BCB510C00B8FA77 /* ClassifyViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7DEE6D6F1BCB511800B8FA77 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE6D6E1BCB511800B8FA77 /* MeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		EAC50E5E87C437E3891B4215 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C05A2FF896AA102BFA3F469 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -71,6 +75,10 @@
 		7DB3B5751BC90E93008CAD7F /* fourpage-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fourpage-568h@2x.jpg"; sourceTree = "<group>"; };
 		7DB3B5761BC90E93008CAD7F /* fourpage@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fourpage@2x.jpg"; sourceTree = "<group>"; };
 		7DB3B57B1BC91607008CAD7F /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		7DEE6D681BCB50E200B8FA77 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		7DEE6D6A1BCB50F800B8FA77 /* ExperienceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceViewController.swift; sourceTree = "<group>"; };
+		7DEE6D6C1BCB510C00B8FA77 /* ClassifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyViewController.swift; sourceTree = "<group>"; };
+		7DEE6D6E1BCB511800B8FA77 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		948807915F235DEAA8848270 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +203,10 @@
 		7D4910311BC8BEFA0053C0AA /* UI(界面) */ = {
 			isa = PBXGroup;
 			children = (
+				7DEE6D671BCB509A00B8FA77 /* Me(我的) */,
+				7DEE6D661BCB508000B8FA77 /* Classify(分类) */,
+				7DEE6D651BCB506100B8FA77 /* Experience(体验) */,
+				7DEE6D641BCB503800B8FA77 /* Explore(探店) */,
 				7DB3B56D1BC90954008CAD7F /* Main(公共) */,
 			);
 			name = "UI(界面)";
@@ -258,6 +270,42 @@
 				7DB3B5761BC90E93008CAD7F /* fourpage@2x.jpg */,
 			);
 			path = Newfeature;
+			sourceTree = "<group>";
+		};
+		7DEE6D641BCB503800B8FA77 /* Explore(探店) */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE6D681BCB50E200B8FA77 /* ExploreViewController.swift */,
+			);
+			name = "Explore(探店)";
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		7DEE6D651BCB506100B8FA77 /* Experience(体验) */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE6D6A1BCB50F800B8FA77 /* ExperienceViewController.swift */,
+			);
+			name = "Experience(体验)";
+			path = Experience;
+			sourceTree = "<group>";
+		};
+		7DEE6D661BCB508000B8FA77 /* Classify(分类) */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE6D6C1BCB510C00B8FA77 /* ClassifyViewController.swift */,
+			);
+			name = "Classify(分类)";
+			path = Classify;
+			sourceTree = "<group>";
+		};
+		7DEE6D671BCB509A00B8FA77 /* Me(我的) */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE6D6E1BCB511800B8FA77 /* MeViewController.swift */,
+			);
+			name = "Me(我的)";
+			path = Me;
 			sourceTree = "<group>";
 		};
 		A7B95F9BDF7F627CA1BA2D2D /* Frameworks */ = {
@@ -466,9 +514,13 @@
 			files = (
 				7DB3B5631BC8E038008CAD7F /* UIColor+extension.swift in Sources */,
 				7DB3B5651BC900BA008CAD7F /* Theme.swift in Sources */,
+				7DEE6D6B1BCB50F800B8FA77 /* ExperienceViewController.swift in Sources */,
 				7DB3B57C1BC91607008CAD7F /* MainNavigationController.swift in Sources */,
 				7DB3B5671BC9045C008CAD7F /* UserInfoManager.swift in Sources */,
 				7DB3B5711BC909A1008CAD7F /* MainTabBarController.swift in Sources */,
+				7DEE6D6F1BCB511800B8FA77 /* MeViewController.swift in Sources */,
+				7DEE6D691BCB50E200B8FA77 /* ExploreViewController.swift in Sources */,
+				7DEE6D6D1BCB510C00B8FA77 /* ClassifyViewController.swift in Sources */,
 				7DB3B56F1BC90978008CAD7F /* LeadpageViewController.swift in Sources */,
 				7D4910361BC8BF970053C0AA /* AppDelegate.swift in Sources */,
 				7DB3B5611BC8DE1D008CAD7F /* Macros.swift in Sources */,

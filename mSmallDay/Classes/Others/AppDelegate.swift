@@ -84,10 +84,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             switch old.compare(currentVersion, options: NSStringCompareOptions.NumericSearch) {
             case .OrderedSame:
                 log.info("偏好设置版本号 等于 当前版本号")
-                return MainNavigationController(rootViewController: MainTabBarController());
+                return MainTabBarController()
             case .OrderedDescending:
                 log.info("偏好设置版本号 大于 当前版本号")
-                return MainNavigationController(rootViewController: MainTabBarController());
+                return MainTabBarController()
             case .OrderedAscending:
                 log.info("偏好设置版本号 小于 当前版本号")
                 NSUserDefaults.standardUserDefaults().setObject(currentVersion, forKey: versionStr)
