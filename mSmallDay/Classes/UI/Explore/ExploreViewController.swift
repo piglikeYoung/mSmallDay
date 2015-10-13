@@ -8,28 +8,42 @@
 
 import UIKit
 
-class ExploreViewController: MainViewController {
+class ExploreViewController: MainViewController, DoubleTextViewDelegate {
 
+    private var backgroundScrollView: UIScrollView!
+    private var doubleTextView: DoubleTextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 初始化导航栏
+        setNavgationItem()
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    /**
+    设置导航栏
+    */
+    private func setNavgationItem() {
+        // 点击进入附近控制器界面
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "附近", titleColor: UIColor.blackColor(), target: self, action: "nearClick")
+        doubleTextView = DoubleTextView(leftText: "美天", rightText: "美辑")
+        doubleTextView.frame = CGRectMake(0, 0, 120, 44)
+        doubleTextView.delegate = self
+        navigationItem.titleView = doubleTextView
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+    /**
+    附近action
     */
-
+    private func nearClick() {
+        navigationController?.pushViewController(NearbyViewController(), animated: true)
+    }
+    
+    
+    // MARK: - DoubleTextViewDelegate
+    func doubleTextView(doubleTextView: DoubleTextView, didClickBtn btn: UIButton, toIndex index: Int) {
+//        backgroundScrollView.setContentOffset(CGPointMake(kScreenWidth * CGFloat(index), 0), animated: true)
+    }
 }
