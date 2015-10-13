@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExperienceViewController: UIViewController {
+class ExperienceViewController: MainViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,6 +13,9 @@
 		7D4910151BC8BCC60053C0AA /* mSmallDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4910141BC8BCC60053C0AA /* mSmallDayTests.swift */; };
 		7D4910201BC8BCC60053C0AA /* mSmallDayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49101F1BC8BCC60053C0AA /* mSmallDayUITests.swift */; };
 		7D4910361BC8BF970053C0AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4910351BC8BF970053C0AA /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		7DADD1991BCBB3980056DED4 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DADD1981BCBB3980056DED4 /* CityViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7DADD19B1BCBB4080056DED4 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DADD19A1BCBB4080056DED4 /* CityCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		7DADD19D1BCBB5A90056DED4 /* CityHeadCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DADD19C1BCBB5A90056DED4 /* CityHeadCollectionReusableView.swift */; settings = {ASSET_TAGS = (); }; };
 		7DB3B5611BC8DE1D008CAD7F /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B5601BC8DE1D008CAD7F /* Macros.swift */; settings = {ASSET_TAGS = (); }; };
 		7DB3B5631BC8E038008CAD7F /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B5621BC8E038008CAD7F /* UIColor+extension.swift */; settings = {ASSET_TAGS = (); }; };
 		7DB3B5651BC900BA008CAD7F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3B5641BC900BA008CAD7F /* Theme.swift */; settings = {ASSET_TAGS = (); }; };
@@ -28,6 +31,8 @@
 		7DEE6D6B1BCB50F800B8FA77 /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE6D6A1BCB50F800B8FA77 /* ExperienceViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7DEE6D6D1BCB510C00B8FA77 /* ClassifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE6D6C1BCB510C00B8FA77 /* ClassifyViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7DEE6D6F1BCB511800B8FA77 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE6D6E1BCB511800B8FA77 /* MeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7DEE6D711BCB569100B8FA77 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE6D701BCB569100B8FA77 /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7DEE6D731BCB58CA00B8FA77 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE6D721BCB58CA00B8FA77 /* UIView+extension.swift */; settings = {ASSET_TAGS = (); }; };
 		EAC50E5E87C437E3891B4215 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C05A2FF896AA102BFA3F469 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -63,6 +68,9 @@
 		7D49101F1BC8BCC60053C0AA /* mSmallDayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mSmallDayUITests.swift; sourceTree = "<group>"; };
 		7D4910211BC8BCC60053C0AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D4910351BC8BF970053C0AA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7DADD1981BCBB3980056DED4 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		7DADD19A1BCBB4080056DED4 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
+		7DADD19C1BCBB5A90056DED4 /* CityHeadCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHeadCollectionReusableView.swift; sourceTree = "<group>"; };
 		7DB3B5601BC8DE1D008CAD7F /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		7DB3B5621BC8E038008CAD7F /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		7DB3B5641BC900BA008CAD7F /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -79,6 +87,8 @@
 		7DEE6D6A1BCB50F800B8FA77 /* ExperienceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceViewController.swift; sourceTree = "<group>"; };
 		7DEE6D6C1BCB510C00B8FA77 /* ClassifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyViewController.swift; sourceTree = "<group>"; };
 		7DEE6D6E1BCB511800B8FA77 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		7DEE6D701BCB569100B8FA77 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7DEE6D721BCB58CA00B8FA77 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		948807915F235DEAA8848270 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				7DB3B5621BC8E038008CAD7F /* UIColor+extension.swift */,
+				7DEE6D721BCB58CA00B8FA77 /* UIView+extension.swift */,
 			);
 			name = "Category(分类)";
 			path = Category;
@@ -250,12 +261,25 @@
 			path = Macros;
 			sourceTree = "<group>";
 		};
+		7DADD1971BCBB3640056DED4 /* City(城市选择) */ = {
+			isa = PBXGroup;
+			children = (
+				7DADD1981BCBB3980056DED4 /* CityViewController.swift */,
+				7DADD19A1BCBB4080056DED4 /* CityCollectionViewCell.swift */,
+				7DADD19C1BCBB5A90056DED4 /* CityHeadCollectionReusableView.swift */,
+			);
+			name = "City(城市选择)";
+			path = City;
+			sourceTree = "<group>";
+		};
 		7DB3B56D1BC90954008CAD7F /* Main(公共) */ = {
 			isa = PBXGroup;
 			children = (
+				7DADD1971BCBB3640056DED4 /* City(城市选择) */,
 				7DB3B57B1BC91607008CAD7F /* MainNavigationController.swift */,
 				7DB3B56E1BC90978008CAD7F /* LeadpageViewController.swift */,
 				7DB3B5701BC909A1008CAD7F /* MainTabBarController.swift */,
+				7DEE6D701BCB569100B8FA77 /* MainViewController.swift */,
 			);
 			name = "Main(公共)";
 			path = Main;
@@ -513,14 +537,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DB3B5631BC8E038008CAD7F /* UIColor+extension.swift in Sources */,
+				7DEE6D711BCB569100B8FA77 /* MainViewController.swift in Sources */,
 				7DB3B5651BC900BA008CAD7F /* Theme.swift in Sources */,
 				7DEE6D6B1BCB50F800B8FA77 /* ExperienceViewController.swift in Sources */,
+				7DADD19D1BCBB5A90056DED4 /* CityHeadCollectionReusableView.swift in Sources */,
 				7DB3B57C1BC91607008CAD7F /* MainNavigationController.swift in Sources */,
 				7DB3B5671BC9045C008CAD7F /* UserInfoManager.swift in Sources */,
 				7DB3B5711BC909A1008CAD7F /* MainTabBarController.swift in Sources */,
+				7DADD19B1BCBB4080056DED4 /* CityCollectionViewCell.swift in Sources */,
 				7DEE6D6F1BCB511800B8FA77 /* MeViewController.swift in Sources */,
 				7DEE6D691BCB50E200B8FA77 /* ExploreViewController.swift in Sources */,
 				7DEE6D6D1BCB510C00B8FA77 /* ClassifyViewController.swift in Sources */,
+				7DEE6D731BCB58CA00B8FA77 /* UIView+extension.swift in Sources */,
+				7DADD1991BCBB3980056DED4 /* CityViewController.swift in Sources */,
 				7DB3B56F1BC90978008CAD7F /* LeadpageViewController.swift in Sources */,
 				7D4910361BC8BF970053C0AA /* AppDelegate.swift in Sources */,
 				7DB3B5611BC8DE1D008CAD7F /* Macros.swift in Sources */,

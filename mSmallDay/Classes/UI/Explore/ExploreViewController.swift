@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExploreViewController: UIViewController {
+class ExploreViewController: MainViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

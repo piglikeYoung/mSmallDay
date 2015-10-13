@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClassifyViewController: UIViewController {
+class ClassifyViewController: MainViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
