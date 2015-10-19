@@ -1,0 +1,9 @@
+ARCHS = $(ARCHS_STANDARD)
+FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/AMap2DMap" "$(PODS_ROOT)/AMapSearch"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/AMap2DMap.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/AMapSearch.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Kingfisher.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/XCGLogger.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"stdc++.6.0.9" -l"z" -framework "AMapSearchKit" -framework "CoreLocation" -framework "CoreTelephony" -framework "Kingfisher" -framework "MAMapKit" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "XCGLogger"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods
+PODS_ROOT = ${SRCROOT}/Pods

@@ -151,7 +151,7 @@ extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView === albumTableView {
             return themes?.list?.count ?? 0
         } else {
-            let event = self.everyDays?.list![section]
+            let event = everyDays?.list![section]
             if let _ = event?.themes?.last {
                 return 2
             }
@@ -176,7 +176,7 @@ extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView === albumTableView {
             return 1
         } else {
-            return self.everyDays?.list?.count ?? 0
+            return everyDays?.list?.count ?? 0
         }
     }
     
@@ -185,12 +185,12 @@ extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
         
         if tableView === albumTableView { // 美辑TableView
             
-            let theme = self.themes!.list![indexPath.row]
+            let theme = themes!.list![indexPath.row]
             cell = ThemeCell.themeCellWithTableView(tableView)
             (cell as! ThemeCell).model = theme
             
         }   else { // 美天TableView
-            let event = self.everyDays!.list![indexPath.section]
+            let event = everyDays!.list![indexPath.section]
             
             if indexPath.row == 1 {
                 cell = ThemeCell.themeCellWithTableView(tableView)

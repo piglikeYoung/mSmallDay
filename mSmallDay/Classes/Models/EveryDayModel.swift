@@ -15,13 +15,17 @@ class EveryDays: NSObject, DictModelProtocol {
     var list: [EveryDay]?
     
     class func loadEventsData(completion: (data: EveryDays?, error: NSError?)->()) {
+        /// 加载events中json数据
         let path = NSBundle.mainBundle().pathForResource("events", ofType: nil)
         let data = NSData(contentsOfFile: path!)
         
         if data != nil {
+            /// 解析json数据
             let dict: NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)) as! NSDictionary
             let modelTool = DictModelManager.sharedInstance
+            /// 字典转模型
             let data = modelTool.objectWithDictionary(dict, cls: EveryDays.self) as? EveryDays
+            /// 回调闭包方法，传输数据给外部调用方法
             completion(data: data, error: nil)
         }
     }

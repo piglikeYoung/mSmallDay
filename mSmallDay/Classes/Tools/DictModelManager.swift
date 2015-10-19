@@ -29,7 +29,7 @@ public class DictModelManager {
     ///  - returns: 模型对象
     internal func objectWithDictionary(dict: NSDictionary, cls: AnyClass) -> AnyObject? {
         
-        // 动态获取命名空间
+        // 动态获取命名空间，例如这个工程是mSmallDay
         let ns = NSBundle.mainBundle().infoDictionary!["CFBundleExecutable"] as! String
         
         // 模型信息
@@ -189,6 +189,7 @@ public class DictModelManager {
             return cache
         }
         
+        // e.g. mSmallDay.EveryDays
         var currentCls: AnyClass = cls
         
         var infoDict = [String: String]()
