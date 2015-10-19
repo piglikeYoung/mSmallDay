@@ -33,8 +33,12 @@ class ExploreViewController: MainViewController, DoubleTextViewDelegate {
         // 初始化美天tablieView
         setDayTableView()
         
+        // 初始化美辑TableView
+        setAlbumTableView()
+        
         // 下拉加载数据
         dayTableView.header.beginRefreshing()
+        albumTableView.header.beginRefreshing()
     }
     
     /**
@@ -52,6 +56,22 @@ class ExploreViewController: MainViewController, DoubleTextViewDelegate {
         backgroundScrollView.addSubview(dayTableView)
         
         setTableViewHeader(self, refreshingAction: "pullLoadDayData", imageFrame: CGRectMake((kScreenWidth - SD_RefreshImage_Width) * 0.5, 47, SD_RefreshImage_Width, SD_RefreshImage_Height), tableView: dayTableView)
+    }
+    
+    /**
+    初始化美辑TableView
+    */
+    private func setAlbumTableView() {
+        albumTableView = UITableView(frame: CGRectMake(kScreenWidth, 0, kScreenWidth, backgroundScrollView.height), style: .Plain)
+        albumTableView.delegate = self
+        albumTableView.dataSource = self
+        albumTableView.separatorStyle = .None
+        albumTableView.backgroundColor = SDBackgroundColor
+        albumTableView.sectionHeaderHeight = 0.1
+        albumTableView.sectionFooterHeight = 0.1
+        backgroundScrollView.addSubview(albumTableView)
+        
+        setTableViewHeader(self, refreshingAction: "pullLoadAlbumData", imageFrame: CGRectMake((kScreenWidth - SD_RefreshImage_Width) * 0.5, 10, SD_RefreshImage_Width, SD_RefreshImage_Height), tableView: albumTableView)
     }
     
     
@@ -123,6 +143,24 @@ class ExploreViewController: MainViewController, DoubleTextViewDelegate {
                 tmpSelf!.everyDays = data!
                 tmpSelf!.dayTableView.reloadData()
                 tmpSelf!.dayTableView.header.endRefreshing()
+            })
+        }
+    }
+    
+    func pullLoadAlbumData() {
+        weak var tmpSelf = self
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC)))
+        dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+            ThemeModels.loadThemesData({ (data, error) -> () in
+                if error != nil {
+                    SVProgressHUD.showErrorWithStatus("网络不给力")
+                    tmpSelf!.albumTableView.header.endRefreshing()
+                    return
+                }
+                
+                tmpSelf!.themes = data!
+                tmpSelf!.albumTableView.reloadData()
+                tmpSelf!.albumTableView.header.endRefreshing()
             })
         }
     }
