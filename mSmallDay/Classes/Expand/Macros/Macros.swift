@@ -11,6 +11,7 @@ import Kingfisher
 import XCGLogger
 
 let kNavigationH: CGFloat = 64
+let kTabBarH: CGFloat = 49
 let kScreenWidth: CGFloat = UIScreen.mainScreen().bounds.size.width
 let kScreenHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
 let kMainBounds: CGRect = UIScreen.mainScreen().bounds
