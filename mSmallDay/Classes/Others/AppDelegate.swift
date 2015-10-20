@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - 地图
     func setUserMapInfo() {
-        UserInfoManager.sharedUserInfoManager.startUserlocation()
+        UserInfoManager.sharedInstance.startUserlocation()
         MAMapServices.sharedServices().apiKey = GaoDeAPPKey
     }
     

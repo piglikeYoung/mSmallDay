@@ -6,3 +6,4 @@
 #import "SVProgressHUD.h"
 #import "MJRefresh.h"
 #import <MAMapKit/MAMapKit.h>
+#import "RegExCategories.h"

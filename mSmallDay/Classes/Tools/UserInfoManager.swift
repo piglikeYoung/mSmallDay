@@ -21,10 +21,6 @@ class UserInfoManager : NSObject {
         return locationManager
     }()
     
-    class var sharedUserInfoManager: UserInfoManager {
-        return sharedInstance
-    }
-    
     /// 获取用户位置授权,定位用户当前坐标
     func startUserlocation() {
         locationManager.autoContentAccessingProxy
