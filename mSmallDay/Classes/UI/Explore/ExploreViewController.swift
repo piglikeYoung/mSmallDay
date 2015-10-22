@@ -124,7 +124,7 @@ class ExploreViewController: MainViewController, DoubleTextViewDelegate {
     /**
     附近action
     */
-    private func nearClick() {
+    func nearClick() {
         navigationController?.pushViewController(NearbyViewController(), animated: true)
     }
     
