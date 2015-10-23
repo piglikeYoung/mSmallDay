@@ -28,7 +28,7 @@ let GitBookURL: String = "https://www.gitbook.com/book/piglikeyoung/piglikeyoung
 let appShare = UIApplication.sharedApplication()
 let sinaURL = "http://weibo.com/u/2696901241/home?topnav=1&wvr=6"
 /// 高德地图KEY
-let GaoDeAPPKey = "2e6b9f0a88b4a79366a13ce1ee9688b8"
+let GaoDeAPPKey = "00de094fbf104b1ce5ee03da4349c919"
 /// 图片缓存
 let appImageCache = KingfisherManager.sharedManager.cache
 

@@ -168,7 +168,7 @@ class ExploreViewController: MainViewController, DoubleTextViewDelegate {
     
     // MARK: - DoubleTextViewDelegate
     func doubleTextView(doubleTextView: DoubleTextView, didClickBtn btn: UIButton, toIndex index: Int) {
-//        backgroundScrollView.setContentOffset(CGPointMake(kScreenWidth * CGFloat(index), 0), animated: true)
+        backgroundScrollView.setContentOffset(CGPointMake(kScreenWidth * CGFloat(index), 0), animated: true)
     }
 }
 

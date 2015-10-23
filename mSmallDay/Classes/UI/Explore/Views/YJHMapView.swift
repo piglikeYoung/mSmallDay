@@ -12,15 +12,20 @@ private let kPointReuseIndentifier = "pointReuseIndentifier"
 
 class YJHMapView: MAMapView {
 
-    /// 地图上的点
+    /// 地图上的点数组
     var flags: [MAPointAnnotation] = [MAPointAnnotation]()
+    /// 最后点击的大头针
     var lastMAAnnotationView: MAAnnotationView?
+    /// NearbyViewController
     weak var pushVc: NearbyViewController?
     
     var nearsModel: DetailModel? {
         didSet {
+            // 移除之前的点
             flags.removeAll(keepCapacity: true)
             nearCollectionView.reloadData()
+            
+            // 将每个点添加到地图上
             for i in 0..<nearsModel!.list!.count {
                 let eventModel = nearsModel!.list![i]
                 // 坐标转成经纬度
@@ -30,6 +35,7 @@ class YJHMapView: MAMapView {
                     flags.append(po)
                     addAnnotation(po)
                     
+                    // 默认选中第一个点
                     if i == 0 {
                         selectAnnotation(po, animated: true)
                     }
@@ -40,8 +46,8 @@ class YJHMapView: MAMapView {
     
     private lazy var nearCollectionView: UICollectionView = {
         let nearH: CGFloat = 105 // item的高度
-        let nearBottomMargin: CGFloat = 10
-        let itemW = kScreenWidth - 35 - 10
+        let nearBottomMargin: CGFloat = 10 // 距离底部的高度
+        let itemW = kScreenWidth - 35 - 10 // Item宽度
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .Horizontal
@@ -60,14 +66,17 @@ class YJHMapView: MAMapView {
     
     private lazy var myLocalBtn: UIButton = {
         let btnWH: CGFloat = 57
-        let btn = UIButton(frame: CGRectMake(20, kScreenWidth - 180 - btnWH, btnWH, btnWH)) as UIButton
+        let btn = UIButton(frame: CGRectMake(20, kScreenHeight - 180 - btnWH, btnWH, btnWH)) as UIButton
         btn.setBackgroundImage(UIImage(named: "dingwei_1"), forState: .Normal)
         btn.setBackgroundImage(UIImage(named: "dingwei_2"), forState: .Highlighted)
         btn.addTarget(self, action: "backCurrentLocal", forControlEvents: .TouchUpInside)
         return btn
     }()
     
-    private func backCurrentLocal() {
+    /**
+     定位当前用户的位置到地图中心
+     */
+    func backCurrentLocal() {
         setCenterCoordinate(userLocation.coordinate, animated: true)
     }
     
@@ -78,10 +87,13 @@ class YJHMapView: MAMapView {
         showsCompass = false
         showsScale = false
         showsUserLocation = true
+        // 高德地图水印位置
         logoCenter.x = kScreenWidth - logoSize.width + 20
         zoomLevel = 12
         setCenterCoordinate(CLLocationCoordinate2D(latitude: 22.5633480000, longitude: 114.0795910000), animated: true)
         mapType = MAMapType.Standard
+        addSubview(myLocalBtn)
+        addSubview(nearCollectionView)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -91,7 +103,7 @@ class YJHMapView: MAMapView {
     deinit {
         clearDisk()
         showsUserLocation = false
-        print("地图view被销毁")
+        log.info("地图view被销毁")
     }
     
 }

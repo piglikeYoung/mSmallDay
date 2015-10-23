@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D060F9F1BD8CC7C003EC7F4 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D060F9D1BD8CC7C003EC7F4 /* DetailCell.swift */; };
+		7D060FA01BD8CC7C003EC7F4 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D060F9E1BD8CC7C003EC7F4 /* DetailCell.xib */; };
 		7D1142B61BD4825200F32275 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1142831BD4825200F32275 /* MJRefreshAutoFooter.m */; };
 		7D1142B71BD4825200F32275 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1142851BD4825200F32275 /* MJRefreshBackFooter.m */; };
 		7D1142B81BD4825200F32275 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1142871BD4825200F32275 /* MJRefreshComponent.m */; };
@@ -107,6 +109,8 @@
 /* Begin PBXFileReference section */
 		0545ABA053795985DC037FAD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3C05A2FF896AA102BFA3F469 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D060F9D1BD8CC7C003EC7F4 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		7D060F9E1BD8CC7C003EC7F4 /* DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		7D1142821BD4825200F32275 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		7D1142831BD4825200F32275 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		7D1142841BD4825200F32275 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -244,6 +248,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D060F9C1BD8CC58003EC7F4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D060F9D1BD8CC7C003EC7F4 /* DetailCell.swift */,
+				7D060F9E1BD8CC7C003EC7F4 /* DetailCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7D1142801BD4825200F32275 /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +605,7 @@
 		7DEE6D661BCB508000B8FA77 /* Classify(分类) */ = {
 			isa = PBXGroup;
 			children = (
+				7D060F9C1BD8CC58003EC7F4 /* Views */,
 				7DEE6D6C1BCB510C00B8FA77 /* ClassifyViewController.swift */,
 			);
 			name = "Classify(分类)";
@@ -711,6 +725,7 @@
 				TargetAttributes = {
 					7D490FFB1BC8BCC60053C0AA = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 23NC32JMDE;
 					};
 					7D49100F1BC8BCC60053C0AA = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -764,6 +779,7 @@
 				7D13FF0E1BD0F10E004CA0F7 /* nearCell.xib in Resources */,
 				7D13FF231BD0F4B4004CA0F7 /* events in Resources */,
 				7D13FF241BD0F4B4004CA0F7 /* Experience in Resources */,
+				7D060FA01BD8CC7C003EC7F4 /* DetailCell.xib in Resources */,
 				7DB3B5781BC90E93008CAD7F /* fourpage-414w-736h@3x.jpg in Resources */,
 				7DB3B5791BC90E93008CAD7F /* fourpage-568h@2x.jpg in Resources */,
 				7D13FF291BD0F4B4004CA0F7 /* 南锣鼓巷 in Resources */,
@@ -880,6 +896,7 @@
 				7D1142BB1BD4825200F32275 /* MJRefreshAutoGifFooter.m in Sources */,
 				7D4B2D3E1BD4D5D6007A8A42 /* String+extension.swift in Sources */,
 				7D1142C61BD4825200F32275 /* UIScrollView+MJExtension.m in Sources */,
+				7D060F9F1BD8CC7C003EC7F4 /* DetailCell.swift in Sources */,
 				7D1142C81BD4825200F32275 /* UIView+MJExtension.m in Sources */,
 				7D1142CB1BD4825200F32275 /* SVProgressHUD.m in Sources */,
 				7DEE6D731BCB58CA00B8FA77 /* UIView+extension.swift in Sources */,
@@ -1040,6 +1057,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = mSmallDay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1051,6 +1071,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.pike.mSmallDay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "mSmallDay/Classes/Others/mSmallDay-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1062,6 +1083,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = mSmallDay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1073,6 +1097,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.pike.mSmallDay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "mSmallDay/Classes/Others/mSmallDay-Bridging-Header.h";
 			};
 			name = Release;
