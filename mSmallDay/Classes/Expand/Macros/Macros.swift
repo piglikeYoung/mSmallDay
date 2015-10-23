@@ -42,6 +42,9 @@ public let kDetailCellHeight: CGFloat = 220
 /// 店发现 店详情的高度
 public let kEventViewController_ShopView_Height: CGFloat = 45
 
+/// 详情ViewController顶部图片的高度
+public let kDetailViewController_TopImageView_Height: CGFloat = 225
+
 /// 日志打印
 let log: XCGLogger = {
     let log = XCGLogger.defaultInstance()

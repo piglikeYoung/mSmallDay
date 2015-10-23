@@ -69,6 +69,7 @@
 		7D5B51691BD9DD1200CA429C /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B51671BD9DD1200CA429C /* ShareView.swift */; };
 		7D5B516A1BD9DD1200CA429C /* ShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D5B51681BD9DD1200CA429C /* ShareView.xib */; };
 		7D5B516C1BD9DD3900CA429C /* ShareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B516B1BD9DD3900CA429C /* ShareModel.swift */; };
+		7D5B516E1BD9E3AE00CA429C /* EventWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B516D1BD9E3AE00CA429C /* EventWebView.swift */; };
 		7DADD1991BCBB3980056DED4 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DADD1981BCBB3980056DED4 /* CityViewController.swift */; };
 		7DADD19B1BCBB4080056DED4 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DADD19A1BCBB4080056DED4 /* CityCollectionViewCell.swift */; };
 		7DADD19D1BCBB5A90056DED4 /* CityHeadCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DADD19C1BCBB5A90056DED4 /* CityHeadCollectionReusableView.swift */; };
@@ -209,6 +210,7 @@
 		7D5B51671BD9DD1200CA429C /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		7D5B51681BD9DD1200CA429C /* ShareView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareView.xib; sourceTree = "<group>"; };
 		7D5B516B1BD9DD3900CA429C /* ShareModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareModel.swift; sourceTree = "<group>"; };
+		7D5B516D1BD9E3AE00CA429C /* EventWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventWebView.swift; sourceTree = "<group>"; };
 		7DADD1981BCBB3980056DED4 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		7DADD19A1BCBB4080056DED4 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		7DADD19C1BCBB5A90056DED4 /* CityHeadCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHeadCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 				7D5B50E71BD9D53600CA429C /* GuessLikeView.xib */,
 				7D5B50EA1BD9D68D00CA429C /* GuessLikeMoreView.swift */,
 				7D5B50EB1BD9D68D00CA429C /* GuessLikeMoreView.xib */,
+				7D5B516D1BD9E3AE00CA429C /* EventWebView.swift */,
 			);
 			name = "Views(自定义View)";
 			path = Views;
@@ -950,6 +953,7 @@
 				7D4B2D431BD4EA4B007A8A42 /* ThemeViewController.swift in Sources */,
 				7D1142B61BD4825200F32275 /* MJRefreshAutoFooter.m in Sources */,
 				7D1142BF1BD4825200F32275 /* MJRefreshBackNormalFooter.m in Sources */,
+				7D5B516E1BD9E3AE00CA429C /* EventWebView.swift in Sources */,
 				7D1142C71BD4825200F32275 /* UIScrollView+MJRefresh.m in Sources */,
 				7DB3B5611BC8DE1D008CAD7F /* Macros.swift in Sources */,
 				7D1142B91BD4825200F32275 /* MJRefreshFooter.m in Sources */,

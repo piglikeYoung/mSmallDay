@@ -15,6 +15,9 @@ class EventViewController: UIViewController {
     lazy var loadImage: LoadAnimatImageView = LoadAnimatImageView.sharedInstance
     var model: EventModel?
     private lazy var guessLikeView: GuessLikeView = GuessLikeView.guessLikeViewFromXib()
+    private lazy var moreArr: [GuessLikeMoreView] = [GuessLikeMoreView]()
+    private lazy var shareView: ShareView = ShareView.shareViewFromXib()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
