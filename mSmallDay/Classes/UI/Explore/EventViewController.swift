@@ -8,14 +8,18 @@
 
 import UIKit
 
-class EventViewController: UIViewController {
 
+
+class EventViewController: UIViewController {
+    
+    lazy var loadImage: LoadAnimatImageView = LoadAnimatImageView.sharedInstance
     var model: EventModel?
+    private lazy var guessLikeView: GuessLikeView = GuessLikeView.guessLikeViewFromXib()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
 }

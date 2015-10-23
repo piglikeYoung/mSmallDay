@@ -8,9 +8,6 @@
 
 import UIKit
 
-public let SD_RefreshImage_Height: CGFloat = 40
-public let SD_RefreshImage_Width: CGFloat = 35
-
 class ExploreViewController: MainViewController, DoubleTextViewDelegate {
 
     private var backgroundScrollView: UIScrollView!

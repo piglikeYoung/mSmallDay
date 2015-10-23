@@ -32,7 +32,15 @@ let GaoDeAPPKey = "00de094fbf104b1ce5ee03da4349c919"
 /// 图片缓存
 let appImageCache = KingfisherManager.sharedManager.cache
 
+/// 上拉下拉刷新图片的宽高
+public let SD_RefreshImage_Height: CGFloat = 40
+public let SD_RefreshImage_Width: CGFloat = 35
 
+/// 店详情的cell高度
+public let kDetailCellHeight: CGFloat = 220
+
+/// 店发现 店详情的高度
+public let kEventViewController_ShopView_Height: CGFloat = 45
 
 /// 日志打印
 let log: XCGLogger = {

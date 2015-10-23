@@ -8,8 +8,6 @@
 
 import UIKit
 
-public let kDetailCellHeight: CGFloat = 220
-
 class NearbyViewController: UIViewController {
 
     private var nearModel: DetailModel?
