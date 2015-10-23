@@ -70,6 +70,8 @@
 		7D5B516A1BD9DD1200CA429C /* ShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D5B51681BD9DD1200CA429C /* ShareView.xib */; };
 		7D5B516C1BD9DD3900CA429C /* ShareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B516B1BD9DD3900CA429C /* ShareModel.swift */; };
 		7D5B516E1BD9E3AE00CA429C /* EventWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B516D1BD9E3AE00CA429C /* EventWebView.swift */; };
+		7D5B51711BDA01F600CA429C /* ShopDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B516F1BDA01F600CA429C /* ShopDetailContentView.swift */; };
+		7D5B51721BDA01F600CA429C /* ShopDetailContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D5B51701BDA01F600CA429C /* ShopDetailContentView.xib */; };
 		7DADD1991BCBB3980056DED4 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DADD1981BCBB3980056DED4 /* CityViewController.swift */; };
 		7DADD19B1BCBB4080056DED4 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DADD19A1BCBB4080056DED4 /* CityCollectionViewCell.swift */; };
 		7DADD19D1BCBB5A90056DED4 /* CityHeadCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DADD19C1BCBB5A90056DED4 /* CityHeadCollectionReusableView.swift */; };
@@ -211,6 +213,8 @@
 		7D5B51681BD9DD1200CA429C /* ShareView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareView.xib; sourceTree = "<group>"; };
 		7D5B516B1BD9DD3900CA429C /* ShareModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareModel.swift; sourceTree = "<group>"; };
 		7D5B516D1BD9E3AE00CA429C /* EventWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventWebView.swift; sourceTree = "<group>"; };
+		7D5B516F1BDA01F600CA429C /* ShopDetailContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailContentView.swift; sourceTree = "<group>"; };
+		7D5B51701BDA01F600CA429C /* ShopDetailContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopDetailContentView.xib; sourceTree = "<group>"; };
 		7DADD1981BCBB3980056DED4 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		7DADD19A1BCBB4080056DED4 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		7DADD19C1BCBB5A90056DED4 /* CityHeadCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHeadCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -668,6 +672,8 @@
 				7D5B50EA1BD9D68D00CA429C /* GuessLikeMoreView.swift */,
 				7D5B50EB1BD9D68D00CA429C /* GuessLikeMoreView.xib */,
 				7D5B516D1BD9E3AE00CA429C /* EventWebView.swift */,
+				7D5B516F1BDA01F600CA429C /* ShopDetailContentView.swift */,
+				7D5B51701BDA01F600CA429C /* ShopDetailContentView.xib */,
 			);
 			name = "Views(自定义View)";
 			path = Views;
@@ -800,6 +806,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D13FF271BD0F4B4004CA0F7 /* themes in Resources */,
+				7D5B51721BDA01F600CA429C /* ShopDetailContentView.xib in Resources */,
 				7D13FF261BD0F4B4004CA0F7 /* Nears in Resources */,
 				7D1142C41BD4825200F32275 /* MJRefresh.bundle in Resources */,
 				7D13FF201BD0F4B4004CA0F7 /* 798 in Resources */,
@@ -920,6 +927,7 @@
 				7D4B2D411BD4D9F5007A8A42 /* RegExCategories.m in Sources */,
 				7D13FF131BD0F120004CA0F7 /* EventCellTableViewCell.swift in Sources */,
 				7D5B516C1BD9DD3900CA429C /* ShareModel.swift in Sources */,
+				7D5B51711BDA01F600CA429C /* ShopDetailContentView.swift in Sources */,
 				7DB3B57C1BC91607008CAD7F /* MainNavigationController.swift in Sources */,
 				7DB3B5671BC9045C008CAD7F /* UserInfoManager.swift in Sources */,
 				7DB3B5711BC909A1008CAD7F /* MainTabBarController.swift in Sources */,
