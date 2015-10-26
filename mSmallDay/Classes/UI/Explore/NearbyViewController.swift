@@ -4,7 +4,7 @@
 //
 //  Created by piglikeyoung on 15/10/13.
 //  Copyright © 2015年 pikeYoung. All rights reserved.
-//
+//  附近控制器
 
 import UIKit
 
