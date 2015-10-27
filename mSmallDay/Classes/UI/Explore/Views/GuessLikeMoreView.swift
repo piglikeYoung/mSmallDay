@@ -25,7 +25,7 @@ class GuessLikeMoreView: UIView {
     }
     
     class func moreViewWithGuessLikeModel(model: GuessLikeModel) -> GuessLikeMoreView{
-        let moreView = NSBundle.mainBundle().loadNibNamed("MoreView", owner: nil, options: nil).last as! GuessLikeMoreView
+        let moreView = NSBundle.mainBundle().loadNibNamed("GuessLikeMoreView", owner: nil, options: nil).last as! GuessLikeMoreView
         moreView.model = model
         return moreView
     }

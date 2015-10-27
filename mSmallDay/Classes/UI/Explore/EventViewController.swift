@@ -8,23 +8,129 @@
 
 import UIKit
 
-
-
 class EventViewController: UIViewController {
     
     lazy var loadImage: LoadAnimatImageView = LoadAnimatImageView.sharedInstance
+    private let imageW = kScreenWidth - 23.0
+    private let scrollShowNavH = kDetailViewController_TopImageView_Height - kNavigationH
+    private lazy var showBlackImage = false
+    private lazy var isLoadFinsih = false
+    private lazy var isAddBottomView = false
+    private lazy var loadFinishScrollHeihgt: CGFloat = 0
     private lazy var guessLikeView: GuessLikeView = GuessLikeView.guessLikeViewFromXib()
     private lazy var moreArr: [GuessLikeMoreView] = [GuessLikeMoreView]()
     private lazy var shareView: ShareView = ShareView.shareViewFromXib()
-    private lazy var webView: EventWebView = EventWebView(frame: kMainBounds, webViewDelegate: self, webViewScrollViewDelegate: self)
     private lazy var backBtn: UIButton = UIButton()
     private lazy var likeBtn: UIButton = UIButton()
     private lazy var sharedBtn: UIButton = UIButton()
-    private lazy var shopDetailContentView: ShopDetailContentView = ShopDetailContentView.shopDetailContentViewFromXib()
+    private lazy var webView: EventWebView = EventWebView(frame: kMainBounds, webViewDelegate: self, webViewScrollViewDelegate: self)
+    private lazy var detailContentView: ShopDetailContentView = ShopDetailContentView.shopDetailContentViewFromXib()
     ///  记录scrollView最后一次偏移的Y值
     private var lastOffsetY: CGFloat = 0
     
-    /// 自定义导航栏
+    /// MARK:- 方法
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setUpUI()
+        
+        setCustomNavigationItem()
+    }
+    
+    private func setUpUI() {
+        view.clipsToBounds = true
+        view.backgroundColor = SDWebViewBacagroundColor
+        view.addSubview(webView)
+        view.addSubview(detailSV)
+        view.addSubview(topImageView)
+        view.addSubview(shopView)
+    }
+    
+    private func setCustomNavigationItem() {
+        view.addSubview(customNav)
+        //添加返回按钮
+        setButton(backBtn, CGRectMake(-7, 20, 44, 44), "back_0", "back_2", "backButtonClick")
+        view.addSubview(backBtn)
+        // 添加收藏按钮
+        setButton(likeBtn, CGRectMake(kScreenWidth - 105, 20, 44, 44), "collect_0", "collect_0", "lickBtnClick")
+        likeBtn.setImage(UIImage(named: "collect_2"), forState: .Selected)
+        view.addSubview(likeBtn)
+        // 添加分享按钮
+        setButton(sharedBtn, CGRectMake(kScreenWidth - 54, 20, 44, 44), "share_0", "share_2", "sharedBtnClick")
+        view.addSubview(sharedBtn)
+    }
+    
+    private func setButton(btn: UIButton, _ frame: CGRect, _ imageName: String, _ highlightedImageName: String, _ action: Selector) {
+        btn.frame = frame
+        btn.setImage(UIImage(named: imageName), forState: .Normal)
+        btn.setImage(UIImage(named: highlightedImageName), forState: .Highlighted)
+        btn.addTarget(self, action: action, forControlEvents: .TouchUpInside)
+    }
+    
+    var model: EventModel? {
+        didSet {
+            //TODO: 将设置模型数据的代码封装到模型的方法里
+            loadImage.startLoadAnimatImageViewInView(view, center: view.center)
+            webView.hidden = true
+            // 将模型传入给店铺详情页
+            detailContentView.detailModel = model
+            // 设置地图按钮点击回调闭包
+            weak var tmpSelf = self
+            
+            detailContentView.mapBtnClickCallback = {
+                let navVC = ShowMapViewController()
+                navVC.model = tmpSelf!.model
+                tmpSelf!.navigationController?.pushViewController(navVC, animated: true)
+            }
+            detailSV.addSubview(detailContentView)
+            detailSV.contentSize = CGSize(width: kScreenWidth, height: detailContentView.height - kEventViewController_ShopView_Height)
+            
+            if let imageStr = model?.imgs?.last {
+                topImageView.kf_setImageWithURL(NSURL(string: imageStr)!, placeholderImage: UIImage(named: "quesheng")!)
+            }
+            self.shareView.shareModel = ShareModel(shareTitle: model?.title, shareURL: model?.shareURL, image: nil, shareDetail: model?.detail)
+            var htmlSrt = model?.mobileURL
+            
+            if htmlSrt != nil {
+                var titleStr: String?
+                
+                if model?.title != nil {
+                    titleStr = String(format: "<p style='font-size:20px;'> %@</p>", model!.title!)
+                }
+                
+                if model?.tag != nil {
+                    titleStr = titleStr?.stringByAppendingFormat("<p style='font-size:13px; color: gray';>%@</p>", model!.tag!)
+                }
+                
+                if titleStr != nil {
+                    let newStr: NSMutableString = NSMutableString(string: htmlSrt!)
+                    newStr.insertString(titleStr!, atIndex: 31)
+                    htmlSrt = newStr as String
+                }
+            }
+            
+            let newStr = NSMutableString.changeHeigthAndWidthWithSrting(NSMutableString(string: htmlSrt!))
+            webView.loadHTMLString(newStr as String, baseURL: nil)
+            webView.hidden = false
+            
+            if model?.more?.count > 0 {
+                guessLikeView.hidden = true
+                webView.scrollView.addSubview(guessLikeView)
+                for i in 0..<model!.more!.count {
+                    let moreModel = model!.more![i]
+                    let moreView = GuessLikeMoreView.moreViewWithGuessLikeModel(moreModel)
+                    moreView.hidden = true
+                    moreView.frame = CGRect(x: 0, y: webView.scrollView.contentSize.height, width: kScreenWidth, height: 0)
+                    webView.scrollView.addSubview(moreView)
+                    moreArr.append(moreView)
+                }
+            }
+            
+            loadImage.stopLoadAnimatImageView()
+        }
+    }
+    
+    /// MARK:- 懒加载属性
     private lazy var customNav: UIView = {
         let customNav = UIView(frame: CGRectMake(0, 0, kScreenWidth, kNavigationH))
         customNav.backgroundColor = UIColor.whiteColor()
@@ -40,78 +146,24 @@ class EventViewController: UIViewController {
         return image
     }()
     
-    private lazy var detailScrollView: UIScrollView = {
-        let detailSv = UIScrollView(frame: kMainBounds)
-        detailSv.contentInset = UIEdgeInsets(top: kDetailViewController_TopImageView_Height + kEventViewController_ShopView_Height, left: 0, bottom: 0, right: 0)
-        detailSv.showsHorizontalScrollIndicator = false
-        detailSv.backgroundColor = SDWebViewBacagroundColor
-        detailSv.alwaysBounceVertical = true
-        detailSv.hidden = true
-        detailSv.delegate = self
-        detailSv.setContentOffset(CGPoint(x: 0, y: -(kDetailViewController_TopImageView_Height + kEventViewController_ShopView_Height)), animated: false)
-        return detailSv
+    private lazy var detailSV: UIScrollView = {
+        let detailSV = UIScrollView(frame: kMainBounds)
+        detailSV.contentInset = UIEdgeInsets(top: kDetailViewController_TopImageView_Height + kEventViewController_ShopView_Height, left: 0, bottom: 0, right: 0)
+        detailSV.showsHorizontalScrollIndicator = false
+        detailSV.backgroundColor = SDWebViewBacagroundColor
+        detailSV.alwaysBounceVertical = true
+        detailSV.hidden = true
+        detailSV.delegate = self
+        detailSV.setContentOffset(CGPoint(x: 0, y: -(kDetailViewController_TopImageView_Height + kEventViewController_ShopView_Height)), animated: false)
+        return detailSV
     }()
     
-    private lazy var shopDetailView: ShopDetailView = {
+    private lazy var shopView: ShopDetailView = {
         let shopView = ShopDetailView(frame: CGRect(x: 0, y: kDetailViewController_TopImageView_Height, width: kScreenWidth, height: kEventViewController_ShopView_Height))
         
         shopView.delegate = self
         return shopView
     }()
-    
-    var model: EventModel? {
-        didSet {
-            // TODO: 将设置模型数据的代码封装到模型的方法里
-            loadImage.startLoadAnimatImageViewInView(view, center: view.center)
-            webView.hidden = true
-            // 将模型传入给店铺详情页
-            shopDetailContentView.detailModel = model
-            // 设置地图按钮点击回调闭包
-            weak var tmpSelf = self
-            
-            shopDetailContentView.mapBtnClickCallback = {
-                let showMapVc = ShowMapViewController()
-                showMapVc.model = tmpSelf?.model
-                tmpSelf?.navigationController?.pushViewController(showMapVc, animated: true)
-            }
-            
-            detailScrollView.addSubview(shopDetailContentView)
-            detailScrollView.contentSize = CGSize(width: kScreenWidth, height: shopDetailContentView.height - kEventViewController_ShopView_Height)
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setUpUI()
-    }
-    
-    private func setUpUI() {
-        view.clipsToBounds = true
-        view.backgroundColor = SDWebViewBacagroundColor
-        view.addSubview(webView)
-    }
-    
-    private func setCustomNavigationItem() {
-        view.addSubview(customNav)
-        //添加返回按钮
-        setNavigationBtn(btn: backBtn, frame: CGRectMake(-7, 20, 44, 44), imageName: "back_0", highlightedImageName: "back_2", action: "backButtonClick")
-        view.addSubview(backBtn)
-        // 添加收藏按钮
-        setNavigationBtn(btn: likeBtn, frame: CGRectMake(kScreenWidth - 105, 20, 44, 44), imageName: "collect_0", highlightedImageName: "collect_0", action: "lickBtnClick")
-        likeBtn.setImage(UIImage(named: "collect_2"), forState: .Selected)
-        view.addSubview(likeBtn)
-        // 添加分享按钮
-        setNavigationBtn(btn: sharedBtn, frame: CGRectMake(kScreenWidth - 54, 20, 44, 44), imageName: "share_0", highlightedImageName: "share_2", action: "sharedBtnClick")
-        view.addSubview(sharedBtn)
-    }
-    
-    private func setNavigationBtn(btn btn: UIButton, frame: CGRect, imageName: String, highlightedImageName: String, action: Selector) {
-        btn.frame = frame
-        btn.setImage(UIImage(named: imageName), forState: .Normal)
-        btn.setImage(UIImage(named: highlightedImageName), forState: .Highlighted)
-        btn.addTarget(self, action: action, forControlEvents: .TouchUpInside)
-    }
     
     ///MARK:- 导航按钮Action
     func backButtonClick() {
@@ -128,21 +180,115 @@ class EventViewController: UIViewController {
         shareView.shareVC = self
         shareView.showShareView(CGRectMake(0, kScreenHeight - 215, kScreenWidth, 215))
     }
-
+    
+    /// MARK:- 处理导航条显示消失
+    override func viewWillAppear(animated: Bool) {
+        navigationController!.setNavigationBarHidden(true, animated: true)
+        if isLoadFinsih && isAddBottomView {
+            webView.scrollView.contentSize.height = loadFinishScrollHeihgt
+        }
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        navigationController!.setNavigationBarHidden(false, animated: true)
+        super.viewWillDisappear(animated)
+    }
+    
+    deinit {
+        print("详情控制器被销毁", terminator: "")
+    }
 }
+
 
 /// MARK: 处理内容滚动时的事件
 extension EventViewController: UIScrollViewDelegate {
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        // 解决弹出新的控制器后返回后contentSize自动还原的问题
+        if loadFinishScrollHeihgt > webView.scrollView.contentSize.height && scrollView === webView.scrollView {
+            webView.scrollView.contentSize.height = loadFinishScrollHeihgt
+        }
+        
+        let offsetY: CGFloat = scrollView.contentOffset.y
+        // 判断顶部自定义导航条的透明度,以及图片的切换
+        customNav.alpha = 1 + (offsetY + kNavigationH + kEventViewController_ShopView_Height) / scrollShowNavH
+        if offsetY + kEventViewController_ShopView_Height >= -kNavigationH && showBlackImage == false {
+            backBtn.setImage(UIImage(named: "back_1"), forState: .Normal)
+            likeBtn.setImage(UIImage(named: "collect_1"), forState: .Normal)
+            sharedBtn.setImage(UIImage(named: "share_1"), forState: .Normal)
+            showBlackImage = true
+        } else if offsetY < -kNavigationH - kEventViewController_ShopView_Height && showBlackImage == true {
+            backBtn.setImage(UIImage(named: "back_0"), forState: .Normal)
+            likeBtn.setImage(UIImage(named: "collect_0"), forState: .Normal)
+            sharedBtn.setImage(UIImage(named: "share_0"), forState: .Normal)
+            showBlackImage = false
+        }
+        
+        // 顶部imageView的跟随动画
+        if offsetY <= -kDetailViewController_TopImageView_Height - kEventViewController_ShopView_Height {
+            topImageView.frame.origin.y = 0
+            topImageView.frame.size.height = -offsetY - kEventViewController_ShopView_Height
+            topImageView.frame.size.width = kScreenWidth - offsetY - kDetailViewController_TopImageView_Height
+            topImageView.frame.origin.x = (0 + kDetailViewController_TopImageView_Height + offsetY) * 0.5
+        } else {
+            topImageView.frame.origin.y = -offsetY - kDetailViewController_TopImageView_Height - kEventViewController_ShopView_Height
+        }
+        
+        // 处理shopView
+        if offsetY >= -(kEventViewController_ShopView_Height + kNavigationH) {
+            shopView.frame = CGRect(x: 0, y: kNavigationH, width: kScreenWidth, height: kEventViewController_ShopView_Height)
+        } else {
+            shopView.frame = CGRect(x: 0, y: CGRectGetMaxY(topImageView.frame), width: kScreenWidth, height: kEventViewController_ShopView_Height)
+        }
+        
+        // 记录scrollView最后的偏移量,用于切换scrollView时同步俩个scrollView的偏移值
+        lastOffsetY = offsetY
+    }
 }
 
 /// MARK: UIWebViewDelegate
 extension EventViewController: UIWebViewDelegate {
     
+    func webViewDidFinishLoad(webView: UIWebView) {
+        webView.stringByEvaluatingJavaScriptFromString("document.getElementsByTagName('body')[0].style.background='#F5F5F5';")
+        isLoadFinsih = true
+        guessLikeView.frame = CGRect(x: 0, y: webView.scrollView.contentSize.height, width: kScreenWidth, height: 50)
+        guessLikeView.hidden = false
+        webView.scrollView.contentSize.height += 50
+        for more in moreArr {
+            more.frame = CGRect(x: 0, y: webView.scrollView.contentSize.height, width: kScreenWidth, height: 230)
+            more.hidden = false
+            webView.scrollView.contentSize.height += 235
+            isAddBottomView = true
+        }
+        loadFinishScrollHeihgt = webView.scrollView.contentSize.height
+    }
 }
 
 /// MARK: ShopDetailViewDelegate
 extension EventViewController: ShopDetailViewDelegate {
-
+    
+    func shopDetailView(shopDetailView: ShopDetailView, didSelectedLable index: Int) {
+        if index == 0 {
+            detailSV.hidden = true
+            webView.hidden = false
+            if lastOffsetY > webView.scrollView.contentSize.height + kScreenHeight {
+                webView.scrollView.setContentOffset(CGPoint(x: 0, y: webView.scrollView.contentSize.height), animated: false)
+            } else {
+                webView.scrollView.setContentOffset(CGPoint(x: 0, y: lastOffsetY), animated: false)
+            }
+            
+        } else {
+            detailSV.hidden = false
+            webView.hidden = true
+            if lastOffsetY > detailSV.contentSize.height - kScreenHeight {
+                detailSV.setContentOffset(CGPoint(x: 0, y: detailSV.contentSize.height - kScreenHeight), animated: false)
+            } else {
+                detailSV.setContentOffset(CGPoint(x: 0, y: lastOffsetY), animated: false)
+            }
+        }
+    }
 }
 
